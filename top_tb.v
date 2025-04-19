@@ -1,6 +1,6 @@
+
 //testbench
 module tb_top;
-
 reg clk,reset;
 top uut(.clk(clk),.reset(reset));
 initial
