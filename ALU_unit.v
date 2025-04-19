@@ -1,6 +1,3 @@
-//ALU_unit
-
-
 module ALU_unit(A,B,Control_in,ALU_result,zero);
 input[31:0]A,B;
 input [3:0]Control_in;
@@ -22,15 +19,22 @@ ALU_result<=A+B;
 end
 4'b0110:begin
 if(A==B)
+begin
 zero<=1;
+ALU_result=0;
+end
 else
 zero<=0;
 ALU_result<=A-B;
 end
+4'b0011:begin
+zero<=0;
+ALU_result<=A;  //SPECIALLY USED FOR THE STORE INSTRUCTIONS
+end
 default:
 begin
 zero<=0;
-ALU_result<=32'b0;
+ALU_result=0;
 end
 endcase
 end
