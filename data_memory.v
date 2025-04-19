@@ -16,8 +16,6 @@ D_memory[Address]<=Write_data;
 end
 assign MemData_out=(Mem_read)?D_memory[Address]:32'b0;
 
- assign dm1=D_memory[37];
-  assign dm2=D_memory[58];
 
 
 endmodule
